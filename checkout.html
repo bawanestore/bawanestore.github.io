@@ -1,0 +1,28 @@
+
+<html><head><title>Checkout</title></head>
+<body style="font-family:sans-serif;background:#e8f5e9;">
+<header style="background:#1b5e20; color:white; padding:20px; text-align:center;"><h1>Checkout</h1></header>
+
+<nav style="background:#111; padding:15px; text-align:center;">
+  <a href='index.html' style='color:white; margin:10px;'>Home</a>
+  <a href='shop.html' style='color:white; margin:10px;'>Shop</a>
+  <a href='cart.html' style='color:white; margin:10px;'>Cart</a>
+  <a href='checkout.html' style='color:white; margin:10px;'>Checkout</a>
+</nav>
+
+<section style="padding:20px;">
+  <form id="checkoutForm">
+    <input type="text" id="name" placeholder="Your Name" required style="width:100%;margin:10px 0;padding:10px;">
+    <input type="text" id="address" placeholder="Shipping Address" required style="width:100%;margin:10px 0;padding:10px;">
+    <input type="tel" id="phone" placeholder="Phone Number" required style="width:100%;margin:10px 0;padding:10px;">
+    <button type="submit" style="padding:10px 20px;">Pay Now</button>
+  </form>
+</section>
+<script>
+document.getElementById("checkoutForm").onsubmit = function(e) {
+  e.preventDefault();
+  alert("Redirecting to payment...");
+  window.location.href = "https://rzp.io/l/demoCheckoutLink"; // Replace with real Razorpay link
+};
+</script>
+</body></html>

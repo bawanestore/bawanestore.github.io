@@ -1,0 +1,30 @@
+
+<html><head><title>Cart</title></head>
+<body style="font-family:sans-serif;background:#f0f0f0;">
+<header style="background:#222; color:white; padding:20px; text-align:center;"><h1>Your Cart</h1></header>
+
+<nav style="background:#111; padding:15px; text-align:center;">
+  <a href='index.html' style='color:white; margin:10px;'>Home</a>
+  <a href='shop.html' style='color:white; margin:10px;'>Shop</a>
+  <a href='cart.html' style='color:white; margin:10px;'>Cart</a>
+  <a href='checkout.html' style='color:white; margin:10px;'>Checkout</a>
+</nav>
+
+<section style="padding:20px;">
+  <ul id="cartItems"></ul>
+  <p id="total"></p>
+  <a href="checkout.html"><button>Proceed to Checkout</button></a>
+</section>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+let list = document.getElementById("cartItems");
+let total = 0;
+cart.forEach(item => {
+  let li = document.createElement("li");
+  li.textContent = item.name + " - ₹" + item.price;
+  list.appendChild(li);
+  total += item.price;
+});
+document.getElementById("total").innerText = "Total: ₹" + total;
+</script>
+</body></html>
