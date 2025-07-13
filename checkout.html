@@ -1,28 +1,63 @@
 
-<html><head><title>Checkout</title></head>
-<body style="font-family:sans-serif;background:#e8f5e9;">
-<header style="background:#1b5e20; color:white; padding:20px; text-align:center;"><h1>Checkout</h1></header>
-
-<nav style="background:#111; padding:15px; text-align:center;">
-  <a href='index.html' style='color:white; margin:10px;'>Home</a>
-  <a href='shop.html' style='color:white; margin:10px;'>Shop</a>
-  <a href='cart.html' style='color:white; margin:10px;'>Cart</a>
-  <a href='checkout.html' style='color:white; margin:10px;'>Checkout</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bawane Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('images/bg.jpg') no-repeat center center/cover;
+    }
+    nav {
+      background: rgba(0,0,0,0.7);
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      margin: 15px;
+      display: inline-block;
+    }
+    .product-card img {
+      width: 150px;
+      border-radius: 10px;
+    }
+    .btn {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="cart.html">Cart</a>
+  <a href="checkout.html">Checkout</a>
 </nav>
 
-<section style="padding:20px;">
-  <form id="checkoutForm">
-    <input type="text" id="name" placeholder="Your Name" required style="width:100%;margin:10px 0;padding:10px;">
-    <input type="text" id="address" placeholder="Shipping Address" required style="width:100%;margin:10px 0;padding:10px;">
-    <input type="tel" id="phone" placeholder="Phone Number" required style="width:100%;margin:10px 0;padding:10px;">
-    <button type="submit" style="padding:10px 20px;">Pay Now</button>
+  <h2 style="text-align:center; color:white;">Checkout</h2>
+  <form action="https://formsubmit.co/bawaneramchandra839@gmail.com" method="POST" style="text-align:center; color:white;">
+    <input type="text" name="name" placeholder="Full Name" required><br><br>
+    <input type="text" name="address" placeholder="Address" required><br><br>
+    <input type="tel" name="phone" placeholder="Phone Number" required><br><br>
+    <input type="hidden" name="_next" value="success.html">
+    <button type="submit" class="btn">Place Order</button>
   </form>
-</section>
-<script>
-document.getElementById("checkoutForm").onsubmit = function(e) {
-  e.preventDefault();
-  alert("Redirecting to payment...");
-  window.location.href = "https://rzp.io/l/demoCheckoutLink"; // Replace with real Razorpay link
-};
-</script>
 </body></html>
